@@ -62,6 +62,9 @@ export class LoginComponent {
         });
   }
 
+  register() {
+    this.notif.notImplementedWarning("Registration");
+  }
   //TODO: pressing register should show the unsupported notification.
 }
 

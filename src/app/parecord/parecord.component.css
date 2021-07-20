@@ -1,1 +1,5 @@
 /*TODO: you will need to use CSS in order to make the card look similar to what is on the video.*/
+.card {
+  display: grid;
+  grid-template-columns: 100px 100px 100px;
+}
