@@ -29,6 +29,7 @@ export class AuthService {
     // In the future we will do server authentication here. For now we will simulate it.
   return new Observable(subscriber => {
 
+    //TODO: add the 'user' and '123' option with Role.user. This user won't see the link to Admin.
   if (username === 'admin' && password === '123') {
      const user: User = {username:username, role: Role.admin, token: 'some_random_token'};
 
@@ -40,10 +41,14 @@ export class AuthService {
       subscriber.next('Logged in!');
       this.currentUserSubject.next(user);
       }, 1000);
-  }
-   //TODO: add the 'user' and '123' option with Role.user. This user won't see the link to Admin.
-
-  else{
+  } else if (username === 'user' && password === '123') {
+    const user: User = {username:username, role: Role.user, token: 'some_random_token'};
+    localStorage.setItem('currentUser', JSON.stringify(user));
+    setTimeout(() => {
+      subscriber.next('Logged in!');
+      this.currentUserSubject.next(user);
+    }, 1000);
+  } else {
     //reject
     setTimeout(() => {
       subscriber.error('Wrong username or password');
