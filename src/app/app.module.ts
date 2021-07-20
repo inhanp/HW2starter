@@ -10,6 +10,7 @@ import {MaterialModule} from './material-module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {FormsModule} from '@angular/forms';
 import { ParecordComponent } from './parecord/parecord.component';
+import { AdminComponent } from './admin/admin.component';
 
 //TDOD: add admin component to module. If you use CLI this will be done automatically.
 
@@ -19,7 +20,8 @@ import { ParecordComponent } from './parecord/parecord.component';
     AppComponent,
     LoginComponent,
     HomeComponent,
-    ParecordComponent
+    ParecordComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
