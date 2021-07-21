@@ -11,6 +11,7 @@ import {PAType} from '../_models/PAType';
   styleUrls: ['./parecord.component.css']
 })
 export class ParecordComponent implements OnInit {
+  @Input() input: PARecord;
   //TODO: need to add to @Input for receiving card data from parent component
   //TODO: need to add @Output that will send delete event data to parent component.
 
