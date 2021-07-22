@@ -29,7 +29,7 @@ export class AuthService {
     // In the future we will do server authentication here. For now we will simulate it.
   return new Observable(subscriber => {
 
-    //TODO: add the 'user' and '123' option with Role.user. This user won't see the link to Admin.
+    // add the 'user' and '123' option with Role.user. This user won't see the link to Admin.
   if (username === 'admin' && password === '123') {
      const user: User = {username:username, role: Role.admin, token: 'some_random_token'};
 

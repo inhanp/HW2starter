@@ -65,7 +65,7 @@ export class LoginComponent {
   register() {
     this.notif.notImplementedWarning("Registration");
   }
-  //pressing register should show the unsupported notification.
+  // pressing register should show the unsupported notification.
 }
 
 
