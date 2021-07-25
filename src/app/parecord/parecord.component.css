@@ -1,6 +1,24 @@
-/*TODO: you will need to use CSS in order to make the card look similar to what is on the video.*/
+/*you will need to use CSS in order to make the card look similar to what is on the video.*/
 .card {
   display: grid;
-  grid-template-columns: 100px 100px 100px;
   grid-template-rows: 70px;
+}
+.parecord-card {
+  max-width: 250px;
+  margin: 4px;
+}
+.status {
+  display: grid;
+  grid-template-columns: 80px 45px 80px 45px;
+}
+.stat {
+  display: grid;
+  grid-template-rows: 20px;
+}
+.info {
+  display: grid;
+  grid-template-columns: 100px 50px 50px 50px;
+}
+.icon-display {
+  transform: scale(2);
 }

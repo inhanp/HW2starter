@@ -1,22 +1,47 @@
 <mat-card class="parecord-card">
   <div class="card">
-    <div>
-      <p>date</p>
+    <div class="info">
+      <div>
+        {{date | date:"MMM d, y"}}
+      </div>
+      <div></div>
+      <div>
+        <mat-icon class="icon-display">
+          {{direction}}
+        </mat-icon>
+      </div>
+      <div>
+        <button mat-icon-button [matMenuTriggerFor]="menu">
+          <mat-icon>more_vert</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item (click)="edit()">
+            <mat-icon>edit</mat-icon>
+            <span>Edit</span>
+          </button>
+          <button mat-menu-item (click)="delete()">
+            <mat-icon>delete</mat-icon>
+            <span>Delete</span>
+          </button>
+        </mat-menu>
+      </div>
     </div>
-    <div>
-      <p>icon</p>
-    </div>
-    <div>
-      <p>menu</p>
-    </div>
-    <div>
-      <p>calories</p>
-    </div>
-    <div>
-      <p>minutes</p>
+    <div class="status">
+      <div class="stat">
+        <div>{{calorie}} Cal</div>
+        <div><mat-progress-bar mode="determinate" value={{calorieRate}} color={{barColor}}></mat-progress-bar></div>
+        <div>{{calorieRate | number: '1.0-0'}}%</div>
+      </div>
+      <div></div>
+      <div class="stat">
+        <div>{{minute}} Min</div>
+        <div><mat-progress-bar [color]="barColor" mode="determinate" [value]="minuteRate"></mat-progress-bar></div>
+        <div>{{minuteRate | number: '1.0-0'}}%</div>
+      </div>
+      <div></div>
     </div>
   </div>
-<!--  TODO: make the visuals look similar to what is on the video-->
+<!--  make the visuals look similar to what is on the video-->
 
 
 </mat-card>

@@ -13,12 +13,16 @@ import {PARecord} from '../_models/PARecord';
 
 
   parecords: PARecord[] = [];
-
-
+  data: Date;
   constructor(
     private userService: UserService,
     private notifService: NotificationService
   ) {}
+  deleteDate(event) {
+    console.log('Executed');
+    this.data = event;
+    this.delete();
+  }
 
   ngOnInit() {
     this.loadAllActivities();
@@ -37,7 +41,15 @@ import {PARecord} from '../_models/PARecord';
   }
 
 
-  //TODO: add functions for creating and deleting PA records.
+  // add functions for creating and deleting PA records.
+  add() {
+    this.userService.generateRandomActivity();
+    console.log(this.parecords);
+  }
+  delete() {
+    this.userService.deleteActivity(this.data);
+    console.log(this.parecords);
+  }
 
 }
 

@@ -13,7 +13,11 @@
 
 
 .pa-record-container{
-  /*TODO: fix the CSS to make the layout look like what is on the video. */
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: left;
+  /*fix the CSS to make the layout look like what is on the video. */
   /*hint: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Mastering_Wrapping_of_Flex_Items#Making_things_wrap*/
 }
 

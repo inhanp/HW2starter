@@ -79,18 +79,36 @@ export class UserService {
 
 
   deleteActivity(createdDate: Date) {
-
-    //TODO: implemented deleteion of PA card from parecords. Hint: this could be done as a oneliner.Hint2: use date:Date to uniquely identify the object in the array of objects.
+    const index = this.parecords.findIndex(data => data.createdDate === createdDate);
+    console.log(index);
+    this.parecords.splice(index, 1);
+    // implemented deleteion of PA card from parecords.
+    // Hint: this could be done as a oneliner.Hint2: use date:Date to uniquely identify the object in the array of objects.
 
 
   }
 
   generateRandomActivity() {
-
-    //TODO: generate random activites with randomzied values for calories and duration as well as activity type.
-    //TODO: use setTimeout to simulate delayed network connection
-    //TODO: limit the number of cards to 10. Show a notification once the limit is reached.
-    //TODO: make sure to generate unique dates for the objects.
+    const types = [PAType.biking, PAType.walking, PAType.running];
+    setTimeout(() => {
+      if (this.parecords.length === 10) {
+      this.notif.showNotif('Activity limit reached', 'warning');
+    } else {
+      this.parecords.push({
+        calories: Math.floor(Math.random() * 4000),
+        minutes: Math.floor((Math.random() * 1000)),
+        caloriegoal: Math.floor(Math.random() * 4000),
+        minutegoal: Math.floor(Math.random() * 1000),
+        steps: Math.floor(Math.random() * 30) * 1000,
+        activityType: types[(Math.floor(Math.random() * 2))],
+        createdDate: new Date(new Date(1990, 0, 1).getTime() + Math.random()
+          * (new Date(2021, 6, 23).getTime() - new Date(1990, 0, 1).getTime()))});
+    }
+    }, 1000);
+    // generate random activites with randomzied values for calories and duration as well as activity type.
+    // use setTimeout to simulate delayed network connection
+    // limit the number of cards to 10. Show a notification once the limit is reached.
+    // make sure to generate unique dates for the objects.
 
 
   }

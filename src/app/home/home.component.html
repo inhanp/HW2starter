@@ -1,8 +1,9 @@
 <div class="pa-record-container">
 
 
-<!--  TODO: add appropriate data binding-->
-  <parecord-component class="card-item" *ngFor="let parecord of parecords" ></parecord-component>
+<!--  add appropriate data binding-->
+  <parecord-component class="card-item" *ngFor="let parecord of parecords" [data]="parecord" (deleteData)="deleteDate($event)">
+  </parecord-component>
 
 
 
@@ -11,9 +12,9 @@
 
 
 
-<!--TODO: this button needs to add new randomly generated PA activity. -->
+<!--this button needs to add new randomly generated PA activity. -->
 <div class="fab-container">
-  <button mat-flat-button color="primary"  matTooltip="Add new class" >
+  <button mat-flat-button color="primary"  matTooltip="Add new class" (click)="add()">
     <i class="material-icons">add</i>
   </button>
 </div>
